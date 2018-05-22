@@ -1,6 +1,6 @@
 {
   "name": "generator-ng1",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angularjs generator",
   "main": "index.js",
   "scripts": {
