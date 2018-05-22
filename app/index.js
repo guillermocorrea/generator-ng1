@@ -24,6 +24,7 @@ module.exports = class extends Generator {
             const className = upperCamelCase(answers.name);
             const htmlTemplateName = answers.name + '.component.html';
             const componentName = className + 'Component';
+            const appRoot = 'app/src/';
             // create destination folder
             this.destinationRoot(answers.name);
             this.fs.copyTpl(
@@ -32,7 +33,7 @@ module.exports = class extends Generator {
             );
             this.fs.copyTpl(
                 this.templatePath('tpl-component.ts'),
-                this.destinationPath(answers.name + '.component.ts'),
+                this.destinationPath(appRoot + answers.name + '.component.ts'),
                 {
                     className: className,
                     htmlTemplateName: htmlTemplateName,
@@ -41,7 +42,7 @@ module.exports = class extends Generator {
             );
             this.fs.copyTpl(
                 this.templatePath('tpl-component.spec.ts'),
-                this.destinationPath(answers.name + '.component.spec.ts'),
+                this.destinationPath(appRoot + answers.name + '.component.spec.ts'),
                 {
                     name: answers.name,
                     className: className,
